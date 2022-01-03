@@ -1,1 +1,2 @@
-ffmpeg -rtsp_transport tcp -i rtsp://admin:1q2w3e4r@192.168.100.29:10554/tcp/av0_0 -c copy -f rtsp -c:v mpeg4 -b:v 9000k  -maxrate 9000k -bufsize 1835k -r 30 rtsp://localhost:8554/mystream
+fix fps at 30; ffmpeg -rtsp_transport tcp -i rtsp://admin:1q2w3e4r@192.168.100.29:10554/tcp/av0_0 -c copy -f rtsp -c:v mpeg4 -b:v 9000k  -maxrate 9000k -bufsize 1835k -r 30 rtsp://localhost:8554/mystream
+variable fps, better file size; ffmpeg -rtsp_transport tcp -i rtsp://admin:1q2w3e4r@192.168.100.29:10554/tcp/av0_0 -c copy -f rtsp -c:v mpeg4 -b:v 9000k  -maxrate 9000k -bufsize 1835k rtsp://localhost:8554/mystream
