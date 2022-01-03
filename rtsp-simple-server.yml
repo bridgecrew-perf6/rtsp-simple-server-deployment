@@ -241,7 +241,7 @@ paths:
     # * RTSP_PORT: server port
     # * 1, 2, ...: regular expression groups, if path name is
     #   a regular expression.
-    runOnPublish: ffmpeg -i rtsp://localhost:$RTSP_PORT/$RTSP_PATH -c copy -f segment -strftime 1 -segment_time 300 -segment_format mp4 -c:a aac /data/saved_%Y-%m-%d_%H-%M-%S.mp4
+    runOnPublish: ffmpeg -i rtsp://localhost:$RTSP_PORT/$RTSP_PATH -c copy -f segment -strftime 1 -reset_timestamps 1 -segment_time 300 -segment_format mp4 -c:a aac /data/saved_%Y-%m-%d_%H-%M-%S.mp4
     # Restart the command if it exits suddenly.
     runOnPublishRestart: yes
 
