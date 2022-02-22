@@ -32,14 +32,14 @@ readBufferCount: 512
 externalAuthenticationURL:
 
 # Enable the HTTP API.
-api: no
+api: yes
 # Address of the API listener.
-apiAddress: 127.0.0.1:9997
+apiAddress: 0.0.0.0:9997
 
 # Enable Prometheus-compatible metrics.
-metrics: no
+metrics: yes
 # Address of the metrics listener.
-metricsAddress: 127.0.0.1:9998
+metricsAddress: 0.0.0.0:9998
 
 # Enable pprof-compatible endpoint to monitor performances.
 pprof: no
@@ -114,7 +114,7 @@ hlsDisable: no
 hlsAddress: :8888
 # By default, HLS is generated only when requested by a user.
 # This option allows to generate it always, avoiding the delay between request and generation.
-hlsAlwaysRemux: no
+hlsAlwaysRemux: yes
 # Number of HLS segments to generate.
 # Increasing segments allows more buffering,
 # Decreasing segments decreases latency.

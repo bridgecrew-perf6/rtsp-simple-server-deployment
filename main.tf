@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "docker" {
-  host    = "npipe:////.//pipe//docker_engine"
+#  host    = "npipe:////.//pipe//docker_engine"
 }
 
 resource "docker_image" "rtsp" {
@@ -31,16 +31,24 @@ resource "docker_container" "rtsp" {
     internal = 8888
     external = 8888
   }
+  ports {
+    internal = 9997
+    external = 9997
+  }
+  ports {
+    internal = 9998
+    external = 9998
+  }
   env = [
     "RTSP_PROTOCOLS=tcp"
   ]
   volumes {
-    host_path = "C:\\Workspaces\\rtsp-simple-server\\rtsp-simple-server.yml"
+    host_path = "/home/wipu/Workspaces/rtsp-simple-server-deployment/rtsp-simple-server.yml"
     container_path = "/rtsp-simple-server.yml"
     read_only = true
   }
   volumes {
-    host_path = "C:\\Workspaces\\rtsp-simple-server\\data"
+    host_path = "/data/cctv-data"
     container_path = "/data/"
   }
 
